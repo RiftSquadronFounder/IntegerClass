@@ -50,6 +50,8 @@ public:
 	bool operator<=(Integer other);
 	bool operator>=(int other);
 	bool operator<=(int other);
+	bool operator>(Integer other);
+	bool operator<(Integer other);
 
 	void ValueOut();
 
