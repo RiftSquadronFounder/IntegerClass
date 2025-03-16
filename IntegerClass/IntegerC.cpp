@@ -42,6 +42,52 @@ Integer::Integer() {
 
 
 
+
+void Integer::operator++() {
+	if (Positive_ == true) {
+		value_ += 1;
+	}
+	else {
+		value_ -= 1;
+	}
+};
+
+void Integer::operator++(int) {
+	if (Positive_ == true) {
+		value_ += 1;
+	}
+	else {
+		value_ -= 1;
+	}
+};
+
+void Integer::operator--() {
+	if (Positive_ == true) {
+		value_ += 1;
+	}
+	else {
+		value_ -= 1;
+	}
+};
+
+void Integer::operator--(int) {
+	if (Positive_ == true) {
+		value_ += 1;
+	}
+	else {
+		value_ -= 1;
+	}
+};
+
+
+
+
+
+
+
+
+
+
 Integer Integer::operator+(Integer other) {
 	Integer answer;
 	if (Positive_ == other.Positive_) {

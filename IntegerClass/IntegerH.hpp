@@ -26,6 +26,16 @@ public:
 
 
 
+	void operator++();
+
+	void operator++(int);
+
+	void operator--();
+
+	void operator--(int);
+
+
+
 	void operator+=(Integer other);
 	void operator-=(Integer other);
 	void operator*=(Integer other);
