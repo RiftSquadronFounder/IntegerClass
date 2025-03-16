@@ -181,9 +181,20 @@ bool Integer::operator==(int other) {
 	return is_same;
 }
 
-bool Integer::operator<=(Integer other) { return 0; }
+bool Integer::operator<=(Integer other) {
+	if (*this < other || *this == other) {
+		return true;
+	}
+	else { return false; }
+}
 
-bool Integer::operator>=(Integer other) { return 0; }
+
+bool Integer::operator>=(Integer other) {
+	if (*this > other || *this == other) {
+		return true;
+	}
+	else { return false; }
+}
 
 bool Integer::operator<=(int other) {
 	Integer a = other;
