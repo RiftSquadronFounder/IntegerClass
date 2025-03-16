@@ -1,5 +1,3 @@
-#include <iostream>
-#include <string>
 #include "IntegerH.hpp"
 
 
@@ -41,11 +39,8 @@ public:
 	}
 
 	Integer() {
-		value_ = ;
-		if (value < 0) {
-			Positive_ = true;
-		}
-		else { Positive_ = false; }
+		value_ = 0;
+		Positive_ = true;
 	}
 
 
@@ -100,23 +95,6 @@ public:
 			answer = value_ + other.value_;
 			answer.Positive_ = false;
 		}
-		/*else {
-			if (value_ > other.value_) {
-				if (Positive_) {
-					answer = value_ - other.value_;
-				}
-				else if()
-				answer.Positive_ = Positive_;
-			}
-			else if (value_ < other.value_) {
-				answer = other.value_ - value_;
-				answer.Positive_ = other.Positive_;
-			}
-			else {
-				answer = value_ - other.value_;
-				answer.Positive_ = other.Positive_;
-			}
-		}*/
 
 		return answer;
 	}
@@ -132,6 +110,7 @@ public:
 		answer.value_ = value_ / other.value_;
 		return answer;
 	}
+
 	Integer operator*(Integer other) {
 		Integer answer;
 		if (Positive_ == false && other.Positive_ == false) {
@@ -145,22 +124,28 @@ public:
 
 		return answer;
 	}
+
 	void operator+=(Integer other) {
 		*this = *this + other;
 	}
+
 	void operator-=(Integer other) {
 		*this = *this - other;
 	}
+
 	void operator*=(Integer other) {
 		*this = *this * other;
 	}
+
 	void operator/=(Integer other) {
 		*this = *this / other;
 	}
+
 	void operator=(Integer other) {
 		value_ = other.value_;
 		Positive_ = other.Positive_;
 	}
+
 	void operator=(int other) {
 		value_ = ::abs(other);
 		if (other < 0) {
@@ -170,14 +155,17 @@ public:
 			Positive_ = true;
 		}
 	}
+
 	bool operator!=(Integer other) {
 		return !(*this == other);
 	}
+
 	bool operator!=(int other) {
 		Integer value1;
 		value1.set(value_);
 		return !(value1 == other);
 	}
+
 	bool operator==(Integer other) {
 		Integer value1;
 		value1 = *this;
@@ -185,6 +173,7 @@ public:
 		if (value1.value_ == other.value_ && value1.Positive_ == other.Positive_) { is_same = true; }
 		return is_same;
 	}
+
 	bool operator==(int other) {
 		Integer value1;
 		value1 = *this;
@@ -196,6 +185,22 @@ public:
 		}
 		return is_same;
 	}
+
+	bool operator<=(Integer other) { return 0; }
+
+	bool operator>=(Integer other) { return 0; }
+
+	bool operator<=(int other) {
+		Integer a = other;
+		return *this <= a;
+	}
+
+	bool operator>=(int other) {
+		Integer a = other;
+		return *this >= a;
+	}
+
+
 
 	void ValueOut() {
 
@@ -256,22 +261,21 @@ public:
 		else { return false; }
 	}
 	bool isEqSimple(Integer other) {
-		int minValue = 0;
+		Integer minValue = 0;
 		bool coop = false;
 		if (::abs(other.value()) < value_) { minValue = ::abs(other.value()); }
 		else { minValue = value_; }
-		for (int i = 2; i <= minValue; i++) {
+		for (int i = 2; i <= minValue.value_; i++) {
 			if (value_ % i == 0 && ::abs(other.value()) % i == 0) { coop = true; }
 		}
 		return !coop;
-		// QUESTIONS!!
 	}
 
 
 
 
 private:
-	int value_ = 0;
-	bool Positive_ = true;
+	unsigned value_;
+	bool Positive_;
 
 };

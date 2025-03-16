@@ -1,6 +1,18 @@
 #pragma once
+#ifndef INT_HPP
+#define INT_HPP
+
+#include <iostream>
+#include <fstream>
+#include <string>
+
 class Integer {
 public:
+
+	Integer(int value);
+	Integer();
+
+
 	friend std::ostream& operator<< (std::ostream& out, Integer& read);
 
 	friend std::istream& operator>>(std::istream& in, Integer& write);
@@ -9,7 +21,11 @@ public:
 	Integer operator-(Integer other);
 
 	Integer operator/(Integer other);
+
 	Integer operator*(Integer other);
+
+
+
 	void operator+=(Integer other);
 	void operator-=(Integer other);
 	void operator*=(Integer other);
@@ -20,6 +36,10 @@ public:
 	bool operator!=(int other);
 	bool operator==(Integer other);
 	bool operator==(int other);
+	bool operator>=(Integer other);
+	bool operator<=(Integer other);
+	bool operator>=(int other);
+	bool operator<=(int other);
 
 	void ValueOut();
 
@@ -30,7 +50,7 @@ public:
 
 
 	Integer NOD_func(Integer other);
-	
+
 	Integer NOK_func(Integer other);
 
 
@@ -48,7 +68,8 @@ public:
 
 
 private:
-	int value_ = 0;
-	bool Positive_ = true;
+	unsigned value_;
+	bool Positive_;
 
 };
+#endif // !INTHPP
