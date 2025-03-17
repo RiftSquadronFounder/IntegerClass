@@ -62,12 +62,7 @@ Fraction Fraction::operator-(Fraction value) {
 Fraction Fraction::operator*(Fraction value) {
 	Fraction Answer;
 	Answer.SetValue(this->divider_ * value.divider_, this->divided_ * value.divided_);
-
-
-
-
-
-};
+	};
 
 Fraction Fraction::operator/(Fraction value) {};
 
