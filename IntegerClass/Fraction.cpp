@@ -21,28 +21,53 @@ Fraction Fraction::operator=(Fraction value) {
 	this->divider_ = value.divider_;
 };
 
-Fraction Fraction::operator+(Fraction value) {
-	if (this->divider_ == value.divider_) {
-		this->divided_ += value.divided_;
-	}
-	else{
-		Fraction Answer;
-		Integer Number = 0;
-	
-		Number = (this->divided_ * value.divider_) + (value.divided_ * this->divider_);
-		
-		
-		Answer.SetValue((this->divider_ * value.divider_), Number);
 
-	
-	
-	
+Fraction Fraction::operator+(Fraction value) {
+	Fraction Answer;
+	Integer Number = 0;
+
+
+	if (this->divider_ == value.divider_) {
+		Answer.SetValue(this->divider_, this->divided_ + value.divided_);
 	}
+	else {
+
+		Number = (this->divided_ * value.divider_) + (value.divided_ * this->divider_);
+
+		Answer.SetValue((this->divider_ * value.divider_), Number);
+	}
+
+	return Answer;
 };
 
-Fraction Fraction::operator-(Fraction value) {};
+Fraction Fraction::operator-(Fraction value) {
 
-Fraction Fraction::operator*(Fraction value) {};
+	Fraction Answer;
+	Integer Number = 0;
+
+
+	if (this->divider_ == value.divider_) {
+		Answer.SetValue(this->divider_, this->divided_ - value.divided_);
+	}
+	else {
+
+		Number = (this->divided_ * value.divider_) - (value.divided_ * this->divider_);
+
+		Answer.SetValue((this->divider_ * value.divider_), Number);
+	}
+
+	return Answer;
+};
+
+Fraction Fraction::operator*(Fraction value) {
+	Fraction Answer;
+	Answer.SetValue(this->divider_ * value.divider_, this->divided_ * value.divided_);
+
+
+
+
+
+};
 
 Fraction Fraction::operator/(Fraction value) {};
 
