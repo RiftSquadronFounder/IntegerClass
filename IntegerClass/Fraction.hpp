@@ -13,6 +13,10 @@ public:
 
 	friend std::istream& operator>>(std::istream& in, Integer& write);
 
+
+
+	Fraction operator=(Fraction value);
+
 	Fraction operator+(Fraction value);
 
 	Fraction operator-(Fraction value);
@@ -37,19 +41,27 @@ public:
 	bool operator==(Fraction value);
 
 	bool operator!=(Fraction value);
+	
 
 
 
 
 
+	void SetValue(Integer divider, Integer divided);
 
 
 
-
+	void ValueOut() {
+		if (!Positive_) {
+			std::cout << "-";
+		}
+		std::cout << "(" << divided_ << "/" << divider_ << ")";
+	}
 	Integer FtoInteger();
 	int Ftoint();
 	std::string getFraction();
 private:
+	bool Positive_;
 	Integer divided_;
 	Integer divider_;
 };
