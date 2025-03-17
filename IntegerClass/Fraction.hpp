@@ -9,9 +9,9 @@ public:
 	Fraction(Integer divided, Integer divider);
 	Fraction(Integer FullNumber, Integer divided, Integer divider);
 
-	friend std::ostream& operator<< (std::ostream& out, Integer& read);
+	friend std::ostream& operator<< (std::ostream& out, Fraction& read);
 
-	friend std::istream& operator>>(std::istream& in, Integer& write);
+	friend std::istream& operator>>(std::istream& in, Fraction& write);
 
 
 
@@ -51,12 +51,7 @@ public:
 
 	Fraction ReverseValue();
 
-	void ValueOut() {
-		if (!Positive_) {
-			std::cout << "-";
-		}
-		std::cout << "(" << divided_ << "/" << divider_ << ")";
-	}
+	void ValueOut();
 	Integer FtoInteger();
 	int Ftoint();
 	std::string getFraction();

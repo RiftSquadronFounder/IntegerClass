@@ -13,6 +13,7 @@ std::istream& operator>>(std::istream& in, Integer& write) {
 		for (int i = 0; i < symbol.length(); i++) {
 			if (symbol[i] != '-') {
 				unsignedSTR = unsignedSTR + symbol[i];
+
 			}
 		}
 	}
@@ -20,6 +21,7 @@ std::istream& operator>>(std::istream& in, Integer& write) {
 		write.Positive_ = true;
 		unsignedSTR = symbol;
 	}
+	
 	unsigned value__ = std::abs(std::stoi(unsignedSTR));
 	write.value_ = value__;
 	return in;
@@ -28,9 +30,9 @@ std::istream& operator>>(std::istream& in, Integer& write) {
 Integer::Integer(int value) {
 	value_ = ::abs(value);
 	if (value < 0) {
-		Positive_ = true;
+		Positive_ = false;
 	}
-	else { Positive_ = false; }
+	else { Positive_ = true; }
 }
 
 Integer::Integer() {
@@ -273,7 +275,24 @@ bool Integer::operator>(Integer other) {
 
 };
 
-bool Integer::operator<(Integer other) {};
+bool Integer::operator<(Integer other) {
+	if (this->Positive_ == true && other.Positive_ == false) {
+		return true;
+	}
+	else if (this->Positive_ == true && other.Positive_ == true) {
+		if (this->value_ < other.value_) {
+			return true;
+		}
+		else { return false; }
+	}
+	else if (this->Positive_ == false && other.Positive_ == false) {
+		if (this->value_ > other.value_) {
+			return true;
+		}
+		else { return false; }
+	}
+	else { return false; }
+};
 
 
 
