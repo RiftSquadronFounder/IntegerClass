@@ -49,7 +49,7 @@ public:
 
 	void SetValue(Integer divider, Integer divided);
 
-
+	Fraction ReverseValue();
 
 	void ValueOut() {
 		if (!Positive_) {
