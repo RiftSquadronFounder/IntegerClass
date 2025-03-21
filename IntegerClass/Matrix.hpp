@@ -19,11 +19,25 @@ private:
 public:
 	Matrix(Integer x, Integer y);
 
+	bool operator==(Matrix matrix);
+	void operator=(Matrix matrix);
+
+	void operator+=(Matrix matrix);
+	void operator-=(Matrix matrix);
+	void operator/=(Matrix matrix);
+	void operator*=(Matrix matrix);
+
+
 	Matrix operator+(Matrix matrix);
 	Matrix operator-(Matrix matrix);
 	Matrix operator/(Matrix matrix);
 	Matrix operator*(Matrix matrix);
 	Integer* operator[](size_t index);
+
+	void MatrixOut();
+
+	friend std::ostream& operator<<(std::ostream& outs, const Matrix& rso);
+
 
 };
 
