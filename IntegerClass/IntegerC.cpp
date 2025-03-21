@@ -43,6 +43,15 @@ Integer::Integer() {
 
 
 
+int Integer::ToInt() {
+	if (Positive_ == true) {
+		return int(value_);
+	}
+	else {
+		return -int(value_);
+	}
+	
+}
 
 
 void Integer::operator++() {

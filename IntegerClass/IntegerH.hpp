@@ -34,6 +34,8 @@ public:
 
 	void operator--(int);
 
+	int ToInt();
+
 
 
 	void operator+=(Integer other);
