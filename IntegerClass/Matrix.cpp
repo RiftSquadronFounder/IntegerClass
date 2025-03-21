@@ -91,7 +91,7 @@ Matrix Matrix::operator-(Matrix matrix) {
 	return answer;
 };
 
-Matrix Matrix::operator/(Matrix matrix) {};
+Matrix Matrix::operator/(Matrix matrix) {}; // I don't think this operation even exists, so...
 
 Matrix Matrix::operator*(Matrix matrix) {
 	if (xSize_ == matrix.ySize_ && ySize_ == matrix.xSize_) {
