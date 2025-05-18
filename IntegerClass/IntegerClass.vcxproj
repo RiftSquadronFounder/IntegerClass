@@ -131,11 +131,14 @@
     <ClCompile Include="IntegerC.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Fraction.hpp" />
     <ClInclude Include="IntegerH.hpp" />
     <ClInclude Include="Matrix.hpp" />
+    <ClInclude Include="Point2D.hpp" />
+    <ClInclude Include="Vector2D.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
