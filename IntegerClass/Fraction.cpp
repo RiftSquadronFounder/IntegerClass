@@ -36,10 +36,10 @@ Fraction Fraction::operator+(Fraction value) {
 	else {
 
 		Number = (this->divided_ * value.divider_) + (value.divided_ * this->divider_);
-
-		Answer.SetValue((this->divider_ * value.divider_), Number);
+		//std::cout << this->divider_ << "   " << value.divider_ << std::endl;
+		Answer.SetValue(Number,(this->divider_ * value.divider_));
 	}
-
+	NormalizeSign();
 	return Answer;
 };
 
@@ -50,14 +50,15 @@ Fraction Fraction::operator-(Fraction value) {
 
 
 	if (this->divider_ == value.divider_) {
-		Answer.SetValue(this->divided_ + value.divided_, this->divider_);
+		Answer.SetValue(this->divided_ - value.divided_, this->divider_);
 	}
 	else {
 
 		Number = (this->divided_ * value.divider_) - (value.divided_ * this->divider_);
 
-		Answer.SetValue((this->divider_ * value.divider_), Number);
+		Answer.SetValue(Number,(this->divider_ * value.divider_));
 	}
+	NormalizeSign();
 
 	return Answer;
 }
@@ -87,6 +88,7 @@ Fraction Fraction::ReverseValue() {
 }
 
 void Fraction::ValueOut() {
+	NormalizeSign();
 	if (!Positive_) {
 		std::cout << "-";
 	}
@@ -94,9 +96,31 @@ void Fraction::ValueOut() {
 }
 
 void Fraction::SetValue(Integer divided, Integer divider) {
-	std::cout << "{" << divided << "}";
+	//std::cout << "{" << divided << "}";
 	divided_ = divided;
 	divider_ = divider;
+}
+void Fraction::SwitchPositiveness() {
+	Positive_ = !Positive_;
+}
+
+Integer Fraction::GetDivided(){
+	return divided_;
+}
+
+Integer Fraction::GetDivider(){
+	return divider_;
+}
+
+void Fraction::NormalizeSign() {
+	if (divided_.value() < 0) {
+		divided_ *= -1;
+		SwitchPositiveness();
+	}
+	if (divider_.value() < 0) {
+		divider_ *= -1;
+		SwitchPositiveness();
+	}
 }
 
 
