@@ -131,7 +131,7 @@ Integer Integer::operator-(Integer other) {
 	if (Positive_ == true && other.Positive_ == true) {
 		if (value_ < other.value_) {
 			answer = value_ - other.value_;
-			answer.Positive_ = other.Positive_;
+			answer.Positive_ = false;
 		}
 		else if (value_ > other.value_) {
 			answer = value_ - other.value_;
@@ -354,7 +354,15 @@ void Integer::set(int value) { value_ = value; }
 
 
 bool Integer::sign() { Positive_ = isPositive(); return Positive_; }
-int Integer::value() { return value_; }
+int Integer::value() { 
+	int IntVal = value_;
+	if (Positive_ == true) {
+		return IntVal;
+	}
+	else {
+		return -IntVal;
+	}
+}
 bool Integer::isEven() { if (value_ % 2 == 0) { return true; } else { return false; } }
 bool Integer::isPositive() { if (value_ >= 0) { return true; } else { return false; } }
 bool Integer::isSimple() {
