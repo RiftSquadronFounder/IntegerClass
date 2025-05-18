@@ -51,10 +51,18 @@ public:
 
 	Fraction ReverseValue();
 
+	Integer GetDivider();
+	Integer GetDivided();
+
+
+	void NormalizeSign();
+
+
 	void ValueOut();
 	Integer FtoInteger();
 	int Ftoint();
 	std::string getFraction();
+	void SwitchPositiveness();
 private:
 	bool Positive_;
 	Integer divided_;
