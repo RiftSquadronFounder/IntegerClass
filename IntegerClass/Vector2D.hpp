@@ -23,6 +23,8 @@ public:
 
 	Vector2D Normalize();
 
+	Integer GetX();
+	Integer GetY();
 
 private:
 	Integer coordinateX_ = 0;

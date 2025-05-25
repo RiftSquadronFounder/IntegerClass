@@ -62,3 +62,12 @@ Vector2D Vector2D::operator/(Vector2D other) {
 	return answer;
 }
 
+
+
+
+Integer Vector2D::GetX() {
+	return coordinateX_;
+}
+Integer Vector2D::GetY() {
+	return coordinateY_;
+}
