@@ -386,4 +386,51 @@ bool Integer::isEqSimple(Integer other) {
 	}
 	return !coop;
 }
-// Test commit
+
+
+
+
+
+void Integer::StreamSerialize(std::ostream& writeStream) {
+	writeStream << value_ << " " << Positive_ << "\n";
+}
+void Integer::StreamDeserialize(std::istream& readStream) {
+	int val;
+	bool sign;
+	readStream >> val >> sign;
+	set(val);
+	Positive_ = sign;
+}
+void Integer::Serialize(std::ostream& writeStream) {
+	std::ofstream outFile(fileNameWrite);
+	if (outFile.is_open()) {
+		StreamSerialize(outFile);
+		outFile.close();
+	}
+	else {
+		std::cout << "Unabkle to open file: " << fileNameWrite << std::endl;
+		std::console("pause"); // Я не помню как там дождаться нажатия клавиши, visual studio - чертила, перестал показывать ошибки в коде
+	}
+}
+void Integer::Deserialize(std::istream& readStream) {
+	std::ifstream inFile(fileNameRead);
+	if (inFile.is_open()) {
+		StreamDeserialize(inFile);
+		inFile.close();
+	}
+	else {
+		std::cerr << "Unable to read file: " << fileNameRead << std::endl;
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
