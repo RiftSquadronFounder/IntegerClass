@@ -79,8 +79,8 @@ public:
 	bool isEqSimple(Integer other);
 
 
-	void StreamSerialize(std::ostream& writeStream) const;
-	void StreamDeserialize(std::istream& readStream) const;
+	void StreamSerialize(std::ostream& writeStream);
+	void StreamDeserialize(std::istream& readStream);
 	void Serialize(std::string fileNameWrite);
 	void Deserialize(std::string fileNameRead);
 	

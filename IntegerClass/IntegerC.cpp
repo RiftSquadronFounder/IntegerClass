@@ -401,7 +401,7 @@ void Integer::StreamDeserialize(std::istream& readStream) {
 	set(val);
 	Positive_ = sign;
 }
-void Integer::Serialize(std::ostream& writeStream) {
+void Integer::Serialize(std::string fileNameWrite) {
 	std::ofstream outFile(fileNameWrite);
 	if (outFile.is_open()) {
 		StreamSerialize(outFile);
@@ -409,10 +409,10 @@ void Integer::Serialize(std::ostream& writeStream) {
 	}
 	else {
 		std::cout << "Unabkle to open file: " << fileNameWrite << std::endl;
-		std::console("pause"); // Я не помню как там дождаться нажатия клавиши, visual studio - чертила, перестал показывать ошибки в коде
+		std::cin; // Я не помню как там дождаться нажатия клавиши, visual studio - чертила, перестал показывать ошибки в коде
 	}
 }
-void Integer::Deserialize(std::istream& readStream) {
+void Integer::Deserialize(std::string fileNameRead) {
 	std::ifstream inFile(fileNameRead);
 	if (inFile.is_open()) {
 		StreamDeserialize(inFile);
