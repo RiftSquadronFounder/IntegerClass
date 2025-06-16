@@ -14,19 +14,61 @@ Real::Real() {
 }
 Real::Real(Integer divided, Integer divider) {
 	value = Fraction(divided, divider);
-
+}
+Real::Real(Fraction frac) {
+    value = frac;
 }
 
 
-//Real operator+(Real other){}
-//Real operator-(Real other){}
-//Real operator*(Real other){}
-//Real operator/(Real other){}
+Real Real::operator+(Real other){
+    return Real(value + other.value);
+    }
 
-//Real operator+=(Real other){}
-//Real operator-=(Real other){}
-//Real operator*=(Real other){}
-//Real operator/=(Real other){}
+Real Real::operator-(Real other) {
+    return Real(value - other.value);
+}
+
+Real Real::operator*(Real other) {
+    return Real(value * other.value);
+}
+
+Real Real::operator/(Real other) {
+    return Real(value / other.value);
+}
+
+
+Real Real::operator+=(Real other) {
+    value += other.value;
+    return *this;
+}
+
+Real Real::operator-=(Real other) {
+    value -= other.value;
+    return *this;
+}
+
+Real Real::operator*=(Real other) {
+    value *= other.value;
+    return *this;
+}
+
+Real Real::operator/=(Real other) {
+    value /= other.value;
+    return *this;
+}
+
+
+Real Real::operator=(Real other) {
+    value = other.value;
+    return *this;
+}
+Real Real::operator=(int other) {
+    value = Real(other, 1);;
+    return *this;
+}
+
+
+
 
 
 std::ostream& operator<<(std::ostream& out, Real& read) {
@@ -56,26 +98,26 @@ std::string Real::ToString() {
 }
 
 void Real::CalcAfterDot() {
-	afterDot = "";
-	Integer valToString = 0;
-	Integer divider = value.GetDivider();
-	Integer divided = value.GetDivided();
-	do {
-		valToString = (divided * 10) / divider;
-		divided = 0;
+    afterDot = "";
+    Integer divider = value.GetDivider();
+    Integer divided = value.GetDivided();
 
-		afterDot = afterDot + valToString.ToString();
-	} while (valToString != 0);
-	
-	if (afterDot.length() > 1){
-		while (afterDot[afterDot.length() - 1] == '0') {
-			std::string afterDotNew = "";
-			for (int i = 0; i < afterDot.length() - 1; i++) {
-				afterDotNew += afterDot[i];
-			}
-			afterDot = afterDotNew;
-		}
-	}
-	
+    Integer integerPart = value.FtoInteger();
+    Integer remain = divided - (integerPart * divider);
 
+    int maxDigits = 20;
+    while (remain != 0 && maxDigits-- > 0) {
+        remain = remain * 10;
+        Integer digit = remain / divider;
+        afterDot += digit.ToString();
+        remain = remain - (digit * divider);
+    }
+
+    while (afterDot != "" && afterDot[afterDot.length() - 1] == '0') {
+        afterDot.pop_back();
+    }
+
+    if (afterDot == "") {
+        afterDot = "0";
+    }
 }

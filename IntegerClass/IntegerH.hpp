@@ -16,6 +16,7 @@ public:
 	friend std::ostream& operator<< (std::ostream& out, Integer& read);
 
 	friend std::istream& operator>>(std::istream& in, Integer& write);
+
 	Integer operator+(Integer other);
 
 	Integer operator-(Integer other);

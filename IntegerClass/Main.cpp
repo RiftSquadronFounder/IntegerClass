@@ -42,7 +42,7 @@ int main() {
 	*/
 
 	
-	Real value = Real(10,5);
+	Real value = Real(35,15);
 	std::cout << value;
 	
 	return 0;

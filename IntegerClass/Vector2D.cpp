@@ -4,10 +4,10 @@
 
 
 Vector2D::Vector2D() {
-	coordinateX_ = 0;
-	coordinateY_ = 0;
+	coordinateX_ = Real();
+	coordinateY_ = Real();
 }
-Vector2D::Vector2D(Integer CoordinateX, Integer CoordinateY) {
+Vector2D::Vector2D(Real CoordinateX, Real CoordinateY) {
 	coordinateX_ = CoordinateX;
 	coordinateY_ = CoordinateY;
 }
@@ -65,9 +65,9 @@ Vector2D Vector2D::operator/(Vector2D other) {
 
 
 
-Integer Vector2D::GetX() {
+Real Vector2D::GetX() {
 	return coordinateX_;
 }
-Integer Vector2D::GetY() {
+Real Vector2D::GetY() {
 	return coordinateY_;
 }

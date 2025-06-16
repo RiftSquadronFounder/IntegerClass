@@ -131,6 +131,7 @@
     <ClCompile Include="IntegerC.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Matrix.cpp" />
+    <ClCompile Include="Point2D.cpp" />
     <ClCompile Include="Real.cpp" />
     <ClCompile Include="ScalarStrategy.cpp" />
     <ClCompile Include="Vector2D.cpp" />
@@ -143,6 +144,7 @@
     <ClInclude Include="Point2D.hpp" />
     <ClInclude Include="Real.hpp" />
     <ClInclude Include="ScalarStrategy.hpp" />
+    <ClInclude Include="Shape2D.hpp" />
     <ClInclude Include="Vector2D.hpp" />
     <ClInclude Include="VectorProcessingStrategy.hpp" />
     <ClInclude Include="VectorSumStrategy.hpp" />

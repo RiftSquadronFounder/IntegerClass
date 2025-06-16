@@ -1,6 +1,6 @@
 #ifndef VECTOR2D_HPP
 #define VECTOR2D_HPP
-#include "IntegerH.hpp"
+#include "Real.hpp"
 
 
 
@@ -8,7 +8,7 @@
 class Vector2D {
 public:
 	Vector2D();
-	Vector2D(Integer CoordinateX, Integer CoordinateY);
+	Vector2D(Real CoordinateX, Real CoordinateY);
 
 
 	friend std::ostream& operator<< (std::ostream& out, Vector2D& read);
@@ -23,12 +23,12 @@ public:
 
 	Vector2D Normalize();
 
-	Integer GetX();
-	Integer GetY();
+	Real GetX();
+	Real GetY();
 
 private:
-	Integer coordinateX_ = 0;
-	Integer coordinateY_ = 0;
+	Real coordinateX_;
+	Real coordinateY_;
 };
 
 

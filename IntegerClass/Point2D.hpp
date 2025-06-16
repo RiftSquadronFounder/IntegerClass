@@ -1,16 +1,20 @@
 #ifndef POINT2D_HPP
 #define POINT2D_HPP
-#include "IntegerH.hpp"
-
+#include "Real.hpp"
+#include "Vector2D.hpp"
 
 
 
 class Point2D {
 public:
+	Point2D();
+	Point2D(Real x, Real y);
+	void SetPosition(Real x, Real y);
+	Vector2D GetPosition();
 
 private:
-	Integer coordinateX_ = 0;
-	Integer coordinateY_ = 0;
+	Real coordinateX_;
+	Real coordinateY_;
 };
 
 

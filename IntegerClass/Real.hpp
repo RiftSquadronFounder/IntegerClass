@@ -9,6 +9,7 @@ public:
 
 	Real();
 	Real(Integer divider, Integer divided);
+	Real(Fraction frac);
 
 
 	Real operator+(Real other);
@@ -20,6 +21,11 @@ public:
 	Real operator-=(Real other);
 	Real operator*=(Real other);
 	Real operator/=(Real other);
+
+	Real operator=(Real other);
+	Real operator=(int other);
+
+
 
 
 	friend std::ostream& operator<< (std::ostream& out, Real& read);
