@@ -325,7 +325,9 @@ void Integer::ValueOut() {
 
 Integer Integer::operator%(Integer other) {
 	Integer valuesAfter;
-	valuesAfter = other.value() % value_;
+	if (this->value() != 0 && other.value()!=0){
+		valuesAfter = other.value() % this->value();
+	}
 	return valuesAfter;
 }
 
@@ -423,6 +425,11 @@ void Integer::Deserialize(std::string fileNameRead) {
 	}
 }
 
+
+
+std::string Integer::ToString() {
+	return std::to_string(value_);
+}
 
 
 

@@ -85,6 +85,8 @@ public:
 	void Deserialize(std::string fileNameRead);
 	
 
+	std::string ToString();
+
 
 private:
 	unsigned value_;

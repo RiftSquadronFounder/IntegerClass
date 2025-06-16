@@ -1,10 +1,12 @@
 #include "Fraction.hpp"
 
 Fraction::Fraction() {
+	Positive_ = true;
 	divided_ = 1;
 	divider_ = 1;
 };
 Fraction::Fraction(Integer divided, Integer divider) {
+	Positive_ = true;
 	divided_ = divided;
 	divider_ = divider;
 };
@@ -20,7 +22,9 @@ std::istream& operator>>(std::istream& in, Fraction& write) {
 };
 
 Fraction Fraction::operator=(Fraction value) {
-	return Fraction(value.divided_, value.divider_);
+	divided_ = value.divided_;
+	divider_ = value.divider_;
+	return *this;
 };
 
 
@@ -111,6 +115,17 @@ Integer Fraction::GetDivided(){
 Integer Fraction::GetDivider(){
 	return divider_;
 }
+
+
+
+Integer Fraction::FtoInteger() {
+	return divided_ / divider_;
+}
+
+
+
+
+
 
 void Fraction::NormalizeSign() {
 	if (divided_.value() < 0) {

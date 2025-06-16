@@ -2,6 +2,7 @@
 #include <string>
 #include "IntegerH.hpp"
 #include "Fraction.hpp"
+#include "Real.hpp"
 
 
 
@@ -18,7 +19,7 @@ int main() {
 
 	std::cout <<frac1 <<" - " <<frac2 << " = " << ans << std::endl;
 	*/
-
+	/*
 	Integer value = 12;
 	std::cout <<"Initial value: " << value << "\n\n";
 
@@ -38,7 +39,11 @@ int main() {
 
 
 	std::cout << "Value two after deserealize: " << valueSerTest << "\n\n\n";
-	
+	*/
 
+	
+	Real value = Real(10,5);
+	std::cout << value;
+	
 	return 0;
 }

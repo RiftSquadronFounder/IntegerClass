@@ -64,7 +64,7 @@ public:
 	std::string getFraction();
 	void SwitchPositiveness();
 private:
-	bool Positive_;
+	bool Positive_ = true;
 	Integer divided_;
 	Integer divider_;
 };
