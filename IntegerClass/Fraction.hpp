@@ -11,7 +11,7 @@ public:
 
 	friend std::ostream& operator<< (std::ostream& out, Fraction& read);
 
-	friend std::istream& operator>>(std::istream& in, Fraction& write);
+	friend std::istream& operator>> (std::istream& in, Fraction& write);
 
 
 
@@ -57,7 +57,7 @@ public:
 
 	void NormalizeSign();
 
-
+	std::string ValueString();
 	void ValueOut();
 	Integer FtoInteger();
 	int Ftoint();

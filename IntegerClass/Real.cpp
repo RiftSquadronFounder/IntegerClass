@@ -6,9 +6,6 @@
 
 
 
-
-
-
 Real::Real() {
 	value = Fraction(1, 1);
 }
@@ -63,7 +60,7 @@ Real Real::operator=(Real other) {
     return *this;
 }
 Real Real::operator=(int other) {
-    value = Real(other, 1);;
+    value = Fraction(other, 1);;
     return *this;
 }
 

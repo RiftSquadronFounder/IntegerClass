@@ -4,7 +4,7 @@
 #include "Fraction.hpp"
 
 
-class Real : public Fraction {
+class Real {
 public:
 
 	Real();

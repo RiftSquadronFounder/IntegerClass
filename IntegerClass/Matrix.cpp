@@ -91,7 +91,9 @@ Matrix Matrix::operator-(Matrix matrix) {
 	return answer;
 };
 
-Matrix Matrix::operator/(Matrix matrix) { return Matrix(3,3); } // I don't think this operation even exists, so...
+Matrix Matrix::operator/(Matrix matrix) { //Не реализовано
+	return *this * matrix.UpDownMatrix(); 
+}
 
 Matrix Matrix::operator*(Matrix matrix) {
 	if (xSize_ == matrix.ySize_ && ySize_ == matrix.xSize_) {
@@ -132,6 +134,22 @@ void Matrix::MatrixOut() {
 		std::cout << "]\n";
 	}
 }
+
+
+Matrix Matrix::UpDownMatrix() {
+		Matrix answer = Matrix(this->ySize_, this->xSize_);
+		for (size_t i = 0; i < answer.xSize_; i++) {
+			for (size_t k = 0; k < answer.ySize_; k++) {
+
+				answer[i][k] = matrix_[k][i];
+			}
+		}
+		return answer;
+	
+
+
+}
+
 
 /*friend std::ostream& Matrix::operator<<(std::ostream& outs, const Matrix& rso) {
 	return outs;

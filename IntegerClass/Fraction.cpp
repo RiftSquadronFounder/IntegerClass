@@ -12,7 +12,7 @@ Fraction::Fraction(Integer divided, Integer divider) {
 };
 
 std::ostream& operator<<(std::ostream& out, Fraction& read) {
-	read.ValueOut();
+	read.ValueString();
 	return out;
 };
 
@@ -78,7 +78,21 @@ Fraction Fraction::operator/(Fraction value) {
 }
 
 
+void Fraction::operator+=(Fraction value){
+	*this = *this + value;
+}
 
+void Fraction::operator-=(Fraction value){
+	*this = *this - value;
+}
+
+void Fraction::operator*=(Fraction value){
+	*this = *this * value;
+}
+
+void Fraction::operator/=(Fraction value){
+	*this = *this / value;
+}
 
 
 
@@ -97,6 +111,16 @@ void Fraction::ValueOut() {
 		std::cout << "-";
 	}
 	std::cout << "(" << divided_ << "/" << divider_ << ")";
+}
+
+std::string Fraction::ValueString() {
+	std::string line = "";
+	NormalizeSign();
+	if (!Positive_) {
+		line = line + "-";
+	}
+	line = line + "(" + divided_.ToString() + "/" + divider_.ToString() + ")";
+	return line;
 }
 
 void Fraction::SetValue(Integer divided, Integer divider) {
