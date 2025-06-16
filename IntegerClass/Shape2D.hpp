@@ -8,6 +8,9 @@ class Shape2D {
 public:
 	Shape2D(int amountOfPoints);
 
+	~Shape2D();
+
+
 	void Clear();
 
 	void AddNewPoint(Point2D point);
@@ -16,6 +19,7 @@ public:
 
 private:
 	Point2D* shape_;
+	Integer amountOfPoints_;
 
 };
 

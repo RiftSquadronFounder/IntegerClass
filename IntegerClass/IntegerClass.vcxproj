@@ -134,6 +134,7 @@
     <ClCompile Include="Point2D.cpp" />
     <ClCompile Include="Real.cpp" />
     <ClCompile Include="ScalarStrategy.cpp" />
+    <ClCompile Include="Shape2D.cpp" />
     <ClCompile Include="Vector2D.cpp" />
     <ClCompile Include="VectorSumStrategy.cpp" />
   </ItemGroup>
