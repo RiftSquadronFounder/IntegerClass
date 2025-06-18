@@ -7,6 +7,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IntegerClass", "IntegerClas
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PendosTest", "PendosTest\PendosTest.vcxproj", "{733AD7B2-1326-479F-AF92-E30D6C53E8CA}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IntegerClassLib", "IntegerClassLib\IntegerClassLib.vcxproj", "{48F18E9A-ADA4-4A48-B627-42A1A4A91701}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -31,6 +33,14 @@ Global
 		{733AD7B2-1326-479F-AF92-E30D6C53E8CA}.Release|x64.Build.0 = Release|x64
 		{733AD7B2-1326-479F-AF92-E30D6C53E8CA}.Release|x86.ActiveCfg = Release|Win32
 		{733AD7B2-1326-479F-AF92-E30D6C53E8CA}.Release|x86.Build.0 = Release|Win32
+		{48F18E9A-ADA4-4A48-B627-42A1A4A91701}.Debug|x64.ActiveCfg = Debug|x64
+		{48F18E9A-ADA4-4A48-B627-42A1A4A91701}.Debug|x64.Build.0 = Debug|x64
+		{48F18E9A-ADA4-4A48-B627-42A1A4A91701}.Debug|x86.ActiveCfg = Debug|Win32
+		{48F18E9A-ADA4-4A48-B627-42A1A4A91701}.Debug|x86.Build.0 = Debug|Win32
+		{48F18E9A-ADA4-4A48-B627-42A1A4A91701}.Release|x64.ActiveCfg = Release|x64
+		{48F18E9A-ADA4-4A48-B627-42A1A4A91701}.Release|x64.Build.0 = Release|x64
+		{48F18E9A-ADA4-4A48-B627-42A1A4A91701}.Release|x86.ActiveCfg = Release|Win32
+		{48F18E9A-ADA4-4A48-B627-42A1A4A91701}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
